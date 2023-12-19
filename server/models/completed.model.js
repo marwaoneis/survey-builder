@@ -1,21 +1,21 @@
 const mongoose = require("mongoose");
 
-const surveyCompletedSchema = new mongoose.Schema({
+const completedSurveySchema = new mongoose.Schema({
   userId: {
-    usertype: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
   surveyId: {
-    usertype: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Survey",
     required: true,
   },
 });
 
-const surveyCompleted = mongoose.model(
-  "surveyCompleted",
-  surveyCompletedSchema
+const completedSurvey = mongoose.model(
+  "completedSurvey",
+  completedSurveySchema
 );
 
-module.exports = surveyCompleted;
+module.exports = completedSurvey;

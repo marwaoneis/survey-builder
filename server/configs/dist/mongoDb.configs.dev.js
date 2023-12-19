@@ -6,7 +6,7 @@ var _require = require("mongoose"),
 var mogoose = require("mongoose");
 
 var connectToMongoDB = function connectToMongoDB() {
-  mogoose.connect(process.env.MONGODB_URL);
+  mogoose.connect("mongodb://localhost:27017/db_survey");
   var connection = mongoose.connection;
   connection.on("error", function (error) {
     console.log("Error connection to MongoDB: ", error);

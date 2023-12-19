@@ -18,11 +18,11 @@ app.use("/survey", authMiddleware, surveyRoutes);
 const questionRoutes = require("./routes/question.routes");
 app.use("/question", authMiddleware, questionRoutes);
 
-const answerRoutes = require("./routes/answer.routes");
-app.use("/answer", authMiddleware, answerRoutes);
+const questionAnswerRoutes = require("./routes/question.answer.routes");
+app.use("/question-answer", authMiddleware, questionAnswerRoutes);
 
 const userAnswerRoutes = require("./routes/user.answer.routes");
-app.use("/user.answer.routes.js", authMiddleware, userAnswerRoutes);
+app.use("/user-answer", authMiddleware, userAnswerRoutes);
 
 const PORT = process.env.PORT || 3001;
 

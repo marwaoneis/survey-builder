@@ -24,13 +24,14 @@ const login = async (req, res) => {
     {
       ...userDetails,
     },
-    process.env.JWT_SECRET,
+    "MARGO",
     { expiresIn: "2 days" }
   );
 
   res.status(200).send({
     user: userDetails,
     token,
+    message: "Signed In",
   });
 };
 

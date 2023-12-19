@@ -5,7 +5,7 @@ const {
   addQuestionAnswer,
   deleteQuestionAnswer,
   updateQuestionAnswer,
-} = require("../controllers/answer.controllers");
+} = require("../controllers/question.answer.controllers");
 
 router.post("/", addQuestionAnswer);
 router.delete("/:id", deleteQuestionAnswer);
