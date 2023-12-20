@@ -12,7 +12,7 @@ const Signup = () => {
     lastName: "",
     admin: false,
   });
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -32,11 +32,7 @@ const Signup = () => {
       );
 
       console.log(response.data);
-      if (userData.admin) {
-        navigate("/admin-dashboard");
-      } else {
-        navigate("/dashboard");
-      }
+      navigate("/dashboard");
     } catch (error) {
       console.error(error.response.data);
     }
@@ -99,23 +95,6 @@ const Signup = () => {
                 value={userData.lastName}
                 onChange={handleChange}
                 required
-              />
-            </label>
-          </div>
-          <br />
-          <div className="inputBx">
-            <label className="white-text bold ml-10">
-              Admin:
-              <input
-                type="checkbox"
-                name="admin"
-                checked={userData.admin}
-                onChange={() =>
-                  setUserData({
-                    ...userData,
-                    admin: !userData.admin,
-                  })
-                }
               />
             </label>
           </div>
