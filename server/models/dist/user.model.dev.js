@@ -30,7 +30,7 @@ var userSchema = new mongoose.Schema({
   },
   admin: {
     type: Boolean,
-    "default": false
+    required: true
   }
 });
 userSchema.pre("save", function _callee(next) {
